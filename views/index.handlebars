@@ -1,37 +1,56 @@
-<h1>Burgers!</h1>
+<div class="container">
 
-<h2>Burgers to eat!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      <p>{{id}}. {{burger_name}}
-        <span><button class="change-devour" data-id="{{id}}" data-newdevour=true>
-          {{#if devoured}}devoured!{{else}}devour me!{{/if}}
-        </button></span>
-      </p>
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers that have been devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burger">Burger Name:</label>
-    <input type="text" id="burger" name="name">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Burgers!</h1>
+    </div>
   </div>
 
-  
-  <button type="submit">Add Burger</button>
-</form>
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Burgers to eat!</h2>
+
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        <span>{{this.id}} - {{this.name}}</span>
+        <button type="button" class="change-devour btn btn-primary" data-id="{{this.id}}"
+          data-newDevoured="{{devour}}">Devour Me!</button>
+        <hr>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Burgers that have been devoured!</h2>
+
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        <span>{{this.id}} - {{this.burger_name}}</strong>
+        <button type="button" class="trashburger btn btn-danger" id="trashbutton" data-id="{{this.id}}"
+          data-newDevoured="{{devour}}">Remove from Devoured</button> {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Add a Burger</h2>
+      <form class="create-form">
+
+        <div class="form-group">
+          <label for="burger">Burger Name:</label>
+          <input type="text" id="burg" name="name">
+        </div>
+
+        <button class="btn-primary" type="submit">Add Burger</button>
+      </form>
+    </div>
+  </div>
+</div>
