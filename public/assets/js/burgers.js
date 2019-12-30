@@ -3,7 +3,7 @@ $(function() {
       event.preventDefault();
   
       var newBurger = {
-        burger_name: $("#burg")
+        name: $("#burg")
           .val()
           .trim(),
         devoured: 0
@@ -18,7 +18,7 @@ $(function() {
       });
     });
   
-    $(".change_devour").on("click", function(event) {
+    $(".devourburger").on("click", function(event) {
       event.preventDefault();
   
       var id = $(this).data("id");
@@ -35,15 +35,15 @@ $(function() {
       });
     });
   
-    $(".trashburger").on("click", function(event) {
+    $("#trashbutton").on("click", function(event) {
       event.preventDefault();
   
       var id = $(this).data("id");
   
-      // Send the DELETE request.
+      
       $.ajax({
         type: "DELETE",
         url: "/api/burgers/" + id
-      }).then(location.reload());
+      }).then();
     });
   });
