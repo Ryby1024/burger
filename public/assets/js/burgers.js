@@ -44,6 +44,6 @@ $(function() {
       $.ajax({
         type: "DELETE",
         url: "/api/burgers/" + id
-      }).then();
+      }).then(location.reload());
     });
   });

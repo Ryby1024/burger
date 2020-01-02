@@ -1,0 +1,15 @@
+body    {
+    background-image: url("../images/board.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    font-weight: 600;
+}
+
+.jumbotron  {
+    background-image: url("../images/burger.jpg");
+    background-position: center;
+    height: 100%;
+    text-align: center;
+    color: white;
+}
