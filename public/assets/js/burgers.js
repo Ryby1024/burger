@@ -1,11 +1,14 @@
 $(function() {
     $(".create-form").on("submit", function(event) {
       event.preventDefault();
-  
+      let myBurger = $("#burg").val().trim()
+      
+      if(myBurger === ""){
+        alert("You must give your burger a name.")
+        return
+      }
       var newBurger = {
-        name: $("#burg")
-          .val()
-          .trim(),
+        name: myBurger,
         devoured: 0
       };
   

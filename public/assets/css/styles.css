@@ -13,3 +13,34 @@ body    {
     text-align: center;
     color: white;
 }
+
+#leftburger {
+    border: 2px solid red;
+    border-radius: 2px;
+    text-align: center;
+    margin: 5px
+}
+
+#rightburger {
+    border: 2px solid yellow;
+    border-radius: 2px;
+    text-align: center;
+    margin: 5px
+}
+
+#uneaten    {
+    border: 2px solid brown;
+    border-radius: 2px;
+    margin: 5px
+   
+}
+#eaten    {
+    border: 2px solid brown;
+    border-radius: 2px;
+    margin: 5px
+   
+}
+#add-burger {
+    text-align: center;
+    margin: 5px
+}
